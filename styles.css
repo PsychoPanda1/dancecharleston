@@ -191,9 +191,17 @@ h2 {
 }
 
 .calendar-link,
+.community-link,
 .google-link {
   font-weight: 750;
   text-underline-offset: 0.25em;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .calendar-link {
@@ -211,7 +219,23 @@ h2 {
   transform: translateY(-1px);
 }
 
+.community-link {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.72rem 1.15rem;
+  color: var(--accent-dark);
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.community-link:hover {
+  background: rgb(157 63 49 / 8%);
+  transform: translateY(-1px);
+}
+
 .calendar-link:focus-visible,
+.community-link:focus-visible,
 .google-link:focus-visible,
 .brand:focus-visible,
 .calendar-menu summary:focus-visible,
