@@ -256,6 +256,7 @@ h2 {
 .submit-link:focus-visible,
 .community-link:focus-visible,
 .google-link:focus-visible,
+.calendar-trust a:focus-visible,
 .brand:focus-visible,
 .calendar-menu summary:focus-visible,
 .calendar-menu-list a:focus-visible,
@@ -326,6 +327,35 @@ footer a:focus-visible {
 
 .calendar-frame.is-loaded .loading-message {
   display: none;
+}
+
+.calendar-trust {
+  margin-top: 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.8rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+}
+
+.calendar-trust h3 {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.calendar-trust p {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.calendar-trust a {
+  color: var(--accent-dark);
+  font-weight: 750;
+  text-underline-offset: 0.2em;
 }
 
 footer {
