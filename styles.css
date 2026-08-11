@@ -52,6 +52,12 @@ footer {
   gap: 1rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -82,6 +88,29 @@ footer {
 .tagline {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.calendar-view {
+  min-width: 8.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.58rem 2.15rem 0.58rem 0.9rem;
+  background-color: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .intro {
@@ -146,6 +175,7 @@ h2 {
 .calendar-link:focus-visible,
 .google-link:focus-visible,
 .brand:focus-visible,
+.calendar-view:focus-visible,
 footer a:focus-visible {
   outline: 3px solid rgb(157 63 49 / 35%);
   outline-offset: 4px;
@@ -214,6 +244,10 @@ footer p {
 @media (max-width: 42rem) {
   .tagline {
     display: none;
+  }
+
+  .header-actions {
+    margin-left: auto;
   }
 
   .section-heading,
