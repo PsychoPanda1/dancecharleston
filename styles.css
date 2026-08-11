@@ -1,0 +1,247 @@
+:root {
+  color-scheme: light;
+  --ink: #17231f;
+  --muted: #5f6f68;
+  --paper: #fbfaf6;
+  --surface: #ffffff;
+  --accent: #9d3f31;
+  --accent-dark: #783025;
+  --line: #dfe5df;
+  --shadow: 0 18px 50px rgb(23 35 31 / 10%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgb(157 63 49 / 10%), transparent 30rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header,
+main,
+footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding-block: 1.25rem;
+}
+
+.header-content,
+.section-heading,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 750;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+}
+
+.tagline,
+.intro > p,
+.loading-message {
+  color: var(--muted);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.intro {
+  max-width: 48rem;
+  padding-block: clamp(4rem, 10vw, 7.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+}
+
+.intro > p:not(.eyebrow) {
+  max-width: 42rem;
+  margin: 1.4rem 0 2rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+}
+
+.calendar-link,
+.google-link {
+  font-weight: 750;
+  text-underline-offset: 0.25em;
+}
+
+.calendar-link {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.8rem 1.25rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.calendar-link:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.calendar-link:focus-visible,
+.google-link:focus-visible,
+.brand:focus-visible,
+footer a:focus-visible {
+  outline: 3px solid rgb(157 63 49 / 35%);
+  outline-offset: 4px;
+}
+
+.calendar-section {
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  scroll-margin-top: 1rem;
+}
+
+.section-heading {
+  margin-bottom: 1.4rem;
+}
+
+.google-link {
+  color: var(--accent-dark);
+}
+
+.calendar-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 38rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.calendar-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(38rem, 72vh, 48rem);
+  border: 0;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.calendar-frame.is-loaded iframe {
+  opacity: 1;
+}
+
+.loading-message {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.calendar-frame.is-loaded .loading-message {
+  display: none;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-block: 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 42rem) {
+  .tagline {
+    display: none;
+  }
+
+  .section-heading,
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .google-link {
+    font-size: 0.92rem;
+  }
+
+  .calendar-frame,
+  .calendar-frame iframe {
+    min-height: 42rem;
+    height: 42rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

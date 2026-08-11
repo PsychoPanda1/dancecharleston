@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Discover upcoming social dance events, classes, and gatherings in Charleston, South Carolina."
+    >
+    <title>Dance Charleston | Local Dance Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="#calendar" aria-label="Dance Charleston home">
+          <span class="brand-mark" aria-hidden="true">DC</span>
+          <span>Dance Charleston</span>
+        </a>
+        <p class="tagline">Find your next dance in Charleston, South Carolina.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Charleston's community dance calendar</p>
+        <h1 id="page-title">Let&rsquo;s dance, Charleston.</h1>
+        <p>
+          Explore upcoming social dances, lessons, workshops, and community events
+          across the Lowcountry.
+        </p>
+        <a class="calendar-link" href="#calendar">View the calendar</a>
+      </section>
+
+      <section id="calendar" class="calendar-section" aria-labelledby="calendar-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Upcoming events</p>
+            <h2 id="calendar-title">Dance calendar</h2>
+          </div>
+          <a
+            class="google-link"
+            href="https://calendar.google.com/calendar/embed?src=info%40dancecharleston.com&amp;ctz=America%2FNew_York"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open in Google Calendar <span aria-hidden="true">&nearr;</span></a>
+        </div>
+
+        <div class="calendar-frame" data-calendar-frame>
+          <p class="loading-message" data-loading-message role="status">
+            Loading the Dance Charleston calendar&hellip;
+          </p>
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=info%40dancecharleston.com&amp;ctz=America%2FNew_York"
+            title="Dance Charleston Google Calendar"
+            width="800"
+            height="600"
+            frameborder="0"
+            scrolling="no"
+            loading="lazy"
+            data-calendar
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span data-year></span> Dance Charleston</p>
+      <a href="mailto:info@dancecharleston.com">info@dancecharleston.com</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
