@@ -19,11 +19,15 @@
         </a>
         <div class="header-actions">
           <p class="tagline">Find your next dance in Charleston, South Carolina.</p>
-          <label class="sr-only" for="calendar-view">Choose an event calendar</label>
-          <select id="calendar-view" class="calendar-view" data-page-select>
-            <option value="index.html">All events</option>
-            <option value="tango.html" selected>Tango events</option>
-          </select>
+          <nav class="calendar-nav" aria-label="Event calendars">
+            <details class="calendar-menu">
+              <summary>Tango events</summary>
+              <div class="calendar-menu-list">
+                <a href="index.html">All events</a>
+                <a href="tango.html" aria-current="page">Tango events</a>
+              </div>
+            </details>
+          </nav>
         </div>
       </div>
     </header>
