@@ -274,7 +274,22 @@ footer a:focus-visible {
 }
 
 .google-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.58rem 0.9rem;
+  background: var(--surface);
   color: var(--accent-dark);
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.google-link:hover {
+  border-color: var(--accent);
+  background: rgb(157 63 49 / 8%);
+  transform: translateY(-1px);
 }
 
 .calendar-frame {
