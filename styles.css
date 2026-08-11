@@ -191,6 +191,7 @@ h2 {
 }
 
 .calendar-link,
+.submit-link,
 .community-link,
 .google-link {
   font-weight: 750;
@@ -219,6 +220,23 @@ h2 {
   transform: translateY(-1px);
 }
 
+.submit-link {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.62rem 1rem;
+  background: var(--surface);
+  color: var(--accent-dark);
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.submit-link:hover {
+  border-color: var(--accent);
+  background: rgb(157 63 49 / 8%);
+  transform: translateY(-1px);
+}
+
 .community-link {
   display: inline-block;
   border: 1px solid var(--accent);
@@ -235,6 +253,7 @@ h2 {
 }
 
 .calendar-link:focus-visible,
+.submit-link:focus-visible,
 .community-link:focus-visible,
 .google-link:focus-visible,
 .brand:focus-visible,
