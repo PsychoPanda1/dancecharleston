@@ -36,6 +36,10 @@ const tango = await readFile(path.join(outputDir, "tango.html"), "utf8");
 const eventIndex = await readFile(path.join(outputDir, "events", "index.html"), "utf8");
 assert.ok(home.includes("info%40dancecharleston.com"), "main calendar embed changed unexpectedly");
 assert.ok(tango.includes("c_4c505db2b59a8993633fcaba1fb116ad84b21e38d154a69b62c90276b96467bf"));
+assert.ok(
+  tango.includes("https://www.facebook.com/share/g/1HA3ByyHaN/?mibextid=wwXIfr"),
+  "CATS Facebook group link changed unexpectedly",
+);
 assert.ok(home.includes('href="/events/"'), "home page must link to generated event pages");
 assert.ok(tango.includes('href="/events/"'), "Tango page must link to generated event pages");
 assert.ok(home.includes("Browse upcoming event details."), "home page event-details link text changed unexpectedly");
