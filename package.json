@@ -1,0 +1,18 @@
+{
+  "name": "dancecharleston-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.16.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/generate-site.mjs",
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-generated-site.mjs"
+  },
+  "dependencies": {
+    "node-ical": "0.25.1"
+  }
+}
