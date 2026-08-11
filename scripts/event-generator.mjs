@@ -360,7 +360,7 @@ function renderDescription(description) {
         </section>`;
 }
 
-function renderHeader(currentLabel = "Event pages") {
+function renderHeader() {
   return `<header class="site-header">
       <div class="header-content">
         <a class="brand" href="/" aria-label="Dance Charleston home">
@@ -371,11 +371,10 @@ function renderHeader(currentLabel = "Event pages") {
           <p class="tagline">Find your next dance in Charleston, South Carolina.</p>
           <nav class="calendar-nav" aria-label="Event calendars">
             <details class="calendar-menu">
-              <summary>${escapeHtml(currentLabel)}</summary>
+              <summary>Calendars</summary>
               <div class="calendar-menu-list">
                 <a href="/">All events</a>
                 <a href="/tango.html">Tango events</a>
-                <a href="/events/"${currentLabel === "Event pages" ? ' aria-current="page"' : ""}>Event pages</a>
               </div>
             </details>
           </nav>
@@ -542,7 +541,7 @@ export function renderEventIndex(events) {
     canonical: `${SITE_URL}/events/`,
   })}
   <body>
-    ${renderHeader("Event pages")}
+    ${renderHeader()}
     <main class="event-index">
       <section class="event-index-intro" aria-labelledby="event-index-title">
         <p class="eyebrow">Upcoming events</p>
