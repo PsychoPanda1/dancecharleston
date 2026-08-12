@@ -40,6 +40,9 @@ assert.ok(
   tango.includes("https://www.facebook.com/share/g/1HA3ByyHaN/?mibextid=wwXIfr"),
   "CATS Facebook group link changed unexpectedly",
 );
+assert.ok(home.includes('class="brand-logo"'), "main page must use the Dance Charleston logo");
+assert.ok(tango.includes('class="brand-logo"'), "Tango page must use the Dance Charleston logo");
+assert.ok(tango.includes('class="community-panel"'), "CATS community links must use the community panel");
 assert.ok(home.includes('href="/events/"'), "home page must link to generated event pages");
 assert.ok(tango.includes('href="/events/"'), "Tango page must link to generated event pages");
 assert.ok(home.includes("Browse upcoming event details."), "home page event-details link text changed unexpectedly");

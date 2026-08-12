@@ -364,7 +364,7 @@ function renderHeader() {
   return `<header class="site-header">
       <div class="header-content">
         <a class="brand" href="/" aria-label="Dance Charleston home">
-          <span class="brand-mark" aria-hidden="true">DC</span>
+          <img class="brand-logo" src="/assets/dancecharleston-icon.jpg" alt="" width="68" height="46">
           <span>Dance Charleston</span>
         </a>
         <div class="header-actions">
@@ -405,7 +405,7 @@ function renderHead({ title, description, canonical, type = "website" }) {
     <meta name="twitter:title" content="${safeTitle}">
     <meta name="twitter:description" content="${safeDescription}">
     <meta name="twitter:image" content="${SITE_URL}/assets/dancecharleston-social.jpg">
-    <link rel="stylesheet" href="/styles.css?v=20260811-event-pages">
+    <link rel="stylesheet" href="/styles.css?v=20260811-visual-refresh">
   </head>`;
 }
 
