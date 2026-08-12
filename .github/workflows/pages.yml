@@ -50,6 +50,21 @@ jobs:
       - name: Validate generated pages
         run: pnpm run validate
 
+      - name: Cache Playwright browser
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install browser testing dependencies
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Check accessibility
+        run: pnpm run test:a11y
+
+      - name: Check Lighthouse budgets
+        run: pnpm run test:lighthouse
+
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5

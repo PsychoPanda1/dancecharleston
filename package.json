@@ -10,9 +10,16 @@
   "scripts": {
     "build": "node scripts/generate-site.mjs",
     "test": "node --test test/*.test.mjs",
-    "validate": "node scripts/validate-generated-site.mjs"
+    "validate": "node scripts/validate-generated-site.mjs",
+    "test:a11y": "node scripts/accessibility-check.mjs",
+    "test:lighthouse": "lhci autorun"
   },
   "dependencies": {
     "node-ical": "0.25.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@lhci/cli": "0.15.1",
+    "playwright": "1.62.1"
   }
 }

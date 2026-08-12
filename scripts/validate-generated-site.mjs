@@ -88,6 +88,7 @@ const manifest = JSON.parse(await readFile(path.join(outputDir, "events", "manif
 assert.ok(manifest.eventCount > 0, "event manifest must not be empty");
 assert.equal(manifest.events.length, manifest.eventCount);
 assert.equal(new Set(manifest.events.map(({ slug }) => slug)).size, manifest.eventCount, "event slugs must be unique");
+assert.ok(manifest.generatedAt && !Number.isNaN(Date.parse(manifest.generatedAt)), "manifest generatedAt must be valid");
 
 const sitemap = await readFile(path.join(outputDir, "sitemap.xml"), "utf8");
 assert.ok(sitemap.includes(`<loc>${SITE_URL}/events/</loc>`));
@@ -104,12 +105,35 @@ for (const event of manifest.events) {
 
   const data = JSON.parse(jsonMatch[1]);
   assert.equal(data["@type"], "Event", `${event.slug} schema type mismatch`);
+  assert.equal(data["@context"], "https://schema.org", `${event.slug} schema context mismatch`);
   assert.ok(data.name, `${event.slug} schema name missing`);
   assert.ok(data.startDate, `${event.slug} schema startDate missing`);
+  assert.ok(!Number.isNaN(Date.parse(data.startDate)), `${event.slug} schema startDate invalid`);
+  if (data.endDate) {
+    assert.ok(!Number.isNaN(Date.parse(data.endDate)), `${event.slug} schema endDate invalid`);
+    assert.ok(Date.parse(data.endDate) >= Date.parse(data.startDate), `${event.slug} ends before it starts`);
+  }
+  assert.ok(
+    ["https://schema.org/EventScheduled", "https://schema.org/EventCancelled"].includes(data.eventStatus),
+    `${event.slug} schema eventStatus invalid`,
+  );
+  assert.equal(
+    data.eventAttendanceMode,
+    "https://schema.org/OfflineEventAttendanceMode",
+    `${event.slug} attendance mode mismatch`,
+  );
   assert.ok(data.location?.name, `${event.slug} schema location missing`);
+  assert.equal(data.location?.["@type"], "Place", `${event.slug} schema location type mismatch`);
+  assert.equal(data.location?.address?.["@type"], "PostalAddress", `${event.slug} address type mismatch`);
+  assert.ok(data.location?.address?.streetAddress, `${event.slug} schema streetAddress missing`);
+  assert.ok(Array.isArray(data.image) && data.image.every((url) => URL.canParse(url)), `${event.slug} schema image invalid`);
+  assert.ok(data.description && data.description.length <= 300, `${event.slug} schema description invalid`);
   assert.equal(data.url, canonical, `${event.slug} schema URL mismatch`);
   assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `${event.slug} missing from sitemap`);
 }
+
+const schemaUrls = manifest.events.map(({ slug }) => `${SITE_URL}/events/${slug}/`);
+assert.equal(new Set(schemaUrls).size, schemaUrls.length, "Event schema URLs must be unique");
 
 const eventDirectories = (await readdir(path.join(outputDir, "events"), { withFileTypes: true })).filter((entry) => entry.isDirectory());
 assert.equal(eventDirectories.length, manifest.eventCount, "generated directory count differs from manifest");
