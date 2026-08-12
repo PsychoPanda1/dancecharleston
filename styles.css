@@ -421,6 +421,23 @@ button.social-icon-link {
   color: var(--cream);
 }
 
+.social-icon-link--share {
+  background: var(--accent);
+  color: var(--cream);
+}
+
+.action-feedback {
+  width: 100%;
+  min-height: 1.2rem;
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.action-feedback:empty {
+  display: none;
+}
+
 .social-icon-link:hover {
   filter: brightness(0.94) saturate(1.08);
   transform: translateY(-2px);
