@@ -42,7 +42,13 @@ assert.ok(
 );
 assert.ok(home.includes('class="brand-logo"'), "main page must use the Dance Charleston logo");
 assert.ok(tango.includes('class="brand-logo"'), "Tango page must use the Dance Charleston logo");
-assert.ok(tango.includes('class="community-panel"'), "CATS community links must use the community panel");
+assert.ok(!tango.includes('class="community-panel"'), "CATS community panel must not push the calendar down");
+assert.ok(tango.includes("social-icon-link--whatsapp"), "CATS WhatsApp icon link missing");
+assert.ok(tango.includes("social-icon-link--facebook"), "CATS Facebook icon link missing");
+assert.ok(
+  tango.includes("https://chat.whatsapp.com/IjOchhZwt21GPp6twkI9gK?s=cl&amp;p=a&amp;ilr=4"),
+  "CATS WhatsApp group link changed unexpectedly",
+);
 assert.ok(home.includes('href="/events/"'), "home page must link to generated event pages");
 assert.ok(tango.includes('href="/events/"'), "Tango page must link to generated event pages");
 assert.ok(home.includes("Browse upcoming event details."), "home page event-details link text changed unexpectedly");

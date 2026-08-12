@@ -278,6 +278,7 @@ h2 {
 .calendar-link:focus-visible,
 .submit-link:focus-visible,
 .community-link:focus-visible,
+.social-icon-link:focus-visible,
 .google-link:focus-visible,
 .calendar-trust a:focus-visible,
 .brand:focus-visible,
@@ -377,51 +378,41 @@ footer a:focus-visible {
   background: var(--surface);
 }
 
-.community-panel {
-  display: flex;
+.social-links {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin: -1rem 0 clamp(3rem, 6vw, 5rem);
-  border: 1px solid rgb(32 45 67 / 12%);
-  border-radius: 1.1rem;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  background:
-    radial-gradient(circle at 100% 0, rgb(215 182 110 / 18%), transparent 18rem),
-    var(--navy);
-  color: var(--cream);
-  box-shadow: 0 18px 50px rgb(32 45 67 / 12%);
+  gap: 0.55rem;
 }
 
-.community-panel .eyebrow {
-  color: var(--gold);
+.social-icon-link {
+  display: inline-grid;
+  width: 2.85rem;
+  height: 2.85rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgb(32 45 67 / 16%);
+  transition: filter 160ms ease, transform 160ms ease;
 }
 
-.community-panel h2 {
-  color: var(--cream);
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
+.social-icon-link svg {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 
-.community-panel p:not(.eyebrow) {
-  margin: 0.4rem 0 0;
-  color: rgb(255 248 223 / 75%);
+.social-icon-link--whatsapp {
+  background: #25d366;
 }
 
-.community-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.7rem;
+.social-icon-link--facebook {
+  background: #1877f2;
 }
 
-.community-panel .community-link {
-  border-color: rgb(255 248 223 / 45%);
-  color: var(--cream);
-}
-
-.community-panel .community-link:hover {
-  border-color: var(--gold);
-  background: rgb(255 255 255 / 10%);
+.social-icon-link:hover {
+  filter: brightness(0.94) saturate(1.08);
+  transform: translateY(-2px);
 }
 
 .calendar-trust h3 {
@@ -693,25 +684,9 @@ footer p {
     padding: 1.1rem;
   }
 
-  .community-panel {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: -0.5rem;
-  }
-
-  .community-panel h2 {
-    font-size: clamp(1.9rem, 10vw, 2.35rem);
-  }
-
-  .community-actions {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .community-panel .community-link {
-    width: 100%;
-    text-align: center;
+  .social-icon-link {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .google-link {
