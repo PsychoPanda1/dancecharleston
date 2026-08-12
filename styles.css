@@ -628,6 +628,60 @@ footer p {
   margin: 0;
 }
 
+.not-found-main {
+  display: grid;
+  min-height: calc(100vh - 12rem);
+  place-items: center;
+  padding-block: 3rem 5rem;
+}
+
+.not-found-card {
+  position: relative;
+  width: min(100%, 54rem);
+  overflow: hidden;
+  border: 1px solid rgb(32 45 67 / 12%);
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 7vw, 5rem);
+  background: rgb(255 255 255 / 76%);
+  box-shadow: var(--shadow);
+}
+
+.not-found-card::after {
+  position: absolute;
+  z-index: -1;
+  right: -4rem;
+  bottom: -2rem;
+  width: 22rem;
+  aspect-ratio: 3 / 2;
+  background: url("/assets/dancecharleston-icon.jpg") center / cover no-repeat;
+  content: "";
+  opacity: 0.06;
+  transform: rotate(-4deg);
+}
+
+.not-found-code {
+  margin: 0;
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 13vw, 8rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.not-found-card h1 {
+  max-width: 13ch;
+  margin-block: 1rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+.not-found-card > p:not(.eyebrow, .not-found-code) {
+  max-width: 40rem;
+  margin-bottom: 1.75rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
 @media (max-width: 42rem) {
   .tagline {
     display: none;
