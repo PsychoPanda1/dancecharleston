@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       node-ical:
-        specifier: 0.25.1
-        version: 0.25.1
+        specifier: 0.27.1
+        version: 0.27.1
     devDependencies:
       '@axe-core/playwright':
         specifier: 4.12.1
@@ -43,10 +43,6 @@ packages:
 
   '@formatjs/intl-localematcher@0.6.2':
     resolution: {integrity: sha512-XOMO2Hupl0wdd172Y06h6kLpBz6Dv+J4okPLl4LPtzbr8f66WbIoy4ev98EBuZ6ZK4h5ydTN6XneT4QVpD7cdA==}
-
-  '@js-temporal/polyfill@0.5.1':
-    resolution: {integrity: sha512-hloP58zRVCRSpgDxmqCWJNlizAlUgJFqG2ypq79DCvyv9tHjRYMDOcPFjzfl/A1/YxDvRCZz8wvZvmapQnKwFQ==}
-    engines: {node: '>=12'}
 
   '@lhci/cli@0.15.1':
     resolution: {integrity: sha512-yhC0oXnXqGHYy1xl4D8YqaydMZ/khFAnXGY/o2m/J3PqPa/D0nj3V6TLoH02oVMFeEF2AQim7UbmdXMiXx2tOw==}
@@ -622,9 +618,6 @@ packages:
     resolution: {integrity: sha512-S99WuO3HlhO3XN41EtYUNl9zzXjoJx7QvmipxsJVxtCBT0YHEFy+iOJhjSvrmV12nYhWpZaM8lPHkJm0yUMbag==}
     hasBin: true
 
-  jsbi@4.3.2:
-    resolution: {integrity: sha512-9fqMSQbhJykSeii05nxKl4m6Eqn2P6rOlYiS+C5Dr/HPIU/7yZxu5qzbs40tgaFORiw2Amd0mirjxatXYMkIew==}
-
   legacy-javascript@0.0.1:
     resolution: {integrity: sha512-lPyntS4/aS7jpuvOlitZDFifBCb4W8L/3QU0PLbUTUj+zYah8rfVjYic88yG7ZKTxhS5h9iz7duT8oUXKszLhg==}
 
@@ -754,9 +747,9 @@ packages:
       encoding:
         optional: true
 
-  node-ical@0.25.1:
-    resolution: {integrity: sha512-YD8j+av9f1tlrWBkGjHi8Okv5yKyQPCRLV1IGDW5DgNHXhmoALLeKNdex9govQEJP/HipQDc5YQs2hu81XE/wA==}
-    engines: {node: '>=18'}
+  node-ical@0.27.1:
+    resolution: {integrity: sha512-5fiKuh/h2HrWKzFt20LtRQdjtjdGfijGfDnCfdAEc++SFX9gA6sa7xwj7/BJmRfWtW/NJWBenN4tOJhg0vM3pg==}
+    engines: {node: '>=22'}
 
   object-inspect@1.13.4:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
@@ -899,8 +892,8 @@ packages:
     resolution: {integrity: sha512-s+pyvQeIKIZ0dx5iJiQk1tPLJAWln39+MI5jtM8wnyws+G5azk+dMnMX0qfbqNetKKNgcWWOdi0sfm+FbQbgdQ==}
     engines: {node: '>=10.0.0'}
 
-  rrule-temporal@1.6.0:
-    resolution: {integrity: sha512-tlhiNroletItRVdVP3knk92MCPNdFmPpehQMxf+jSo0CHZpmp1WUsvdVpg2iS++J9+O7/89J64BldN21kbcBqA==}
+  rrule-temporal@2.2.0:
+    resolution: {integrity: sha512-4RpQALg/14JILwVvug+QjX1HvqIkIln5K23S7c7LXpsB9teAkeLl6S8Eky8tzWMpa01PhjHH3wnu+n4hFEbrLw==}
 
   run-async@2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
@@ -1025,8 +1018,14 @@ packages:
   teex@1.0.1:
     resolution: {integrity: sha512-eYE6iEI62Ni1H8oIa7KlDU6uQBtqr4Eajni3wX7rpfXD8ysFx8z0+dri+KWEPWpBsxXfxu58x/0jvTVT1ekOSg==}
 
+  temporal-polyfill@1.0.3:
+    resolution: {integrity: sha512-U8vuzZBc+dfMIfl8wXWcedfI7AJCxJjjVBIRpJUvIz5+UAp555UJDHguKsfZqHWaHRSdVUThm7mqqIWhN/xPBQ==}
+
   temporal-spec@1.0.1:
     resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
+
+  temporal-utils@1.0.1:
+    resolution: {integrity: sha512-HAixuesxFQIUaQk3ptX2jhfO/FsOkgVkDDMawvp6n/fkB1q6BKfs3lURw9I+pK/2e2e/q/vrLrxmeqauBoyGMQ==}
 
   text-decoder@1.2.7:
     resolution: {integrity: sha512-vlLytXkeP4xvEq2otHeJfSQIRyWxo/oZGEbXrtEEF9Hnmrdly59sUbzZ/QgyWuLYHctCHxFF4tRQZNQ9k60ExQ==}
@@ -1226,10 +1225,6 @@ snapshots:
   '@formatjs/intl-localematcher@0.6.2':
     dependencies:
       tslib: 2.8.1
-
-  '@js-temporal/polyfill@0.5.1':
-    dependencies:
-      jsbi: 4.3.2
 
   '@lhci/cli@0.15.1(supports-color@5.5.0)':
     dependencies:
@@ -1891,8 +1886,6 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
-  jsbi@4.3.2: {}
-
   legacy-javascript@0.0.1: {}
 
   lie@3.1.1:
@@ -2025,9 +2018,10 @@ snapshots:
     dependencies:
       whatwg-url: 5.0.0
 
-  node-ical@0.25.1:
+  node-ical@0.27.1:
     dependencies:
-      rrule-temporal: 1.6.0
+      rrule-temporal: 2.2.0
+      temporal-polyfill: 1.0.3
 
   object-inspect@1.13.4: {}
 
@@ -2183,9 +2177,8 @@ snapshots:
 
   robots-parser@3.0.1: {}
 
-  rrule-temporal@1.6.0:
+  rrule-temporal@2.2.0:
     dependencies:
-      '@js-temporal/polyfill': 0.5.1
       temporal-spec: 1.0.1
 
   run-async@2.4.1: {}
@@ -2359,7 +2352,14 @@ snapshots:
       - bare-abort-controller
       - react-native-b4a
 
+  temporal-polyfill@1.0.3:
+    dependencies:
+      temporal-spec: 1.0.1
+      temporal-utils: 1.0.1
+
   temporal-spec@1.0.1: {}
+
+  temporal-utils@1.0.1: {}
 
   text-decoder@1.2.7:
     dependencies:
