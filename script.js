@@ -95,3 +95,36 @@ window.addEventListener("appinstalled", () => {
   deferredInstallPrompt = null;
   installButtons.forEach((button) => { button.hidden = true; });
 });
+
+const shareButtons = document.querySelectorAll("[data-share-button]");
+const shareFeedback = document.querySelector("[data-share-feedback]");
+
+shareButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    const isTangoPage = window.location.pathname.endsWith("/tango.html");
+    const shareData = {
+      title: isTangoPage ? "CATS Tango Events | Dance Charleston" : "Dance Charleston | Local Dance Calendar",
+      text: isTangoPage ? "See upcoming Charleston Argentine Tango events." : "Find upcoming dance events across the Charleston Lowcountry.",
+      url: window.location.href.split("#")[0],
+    };
+
+    try {
+      if (typeof window.navigator.share === "function") {
+        await window.navigator.share(shareData);
+      } else {
+        await window.navigator.clipboard.writeText(shareData.url);
+        if (shareFeedback) shareFeedback.textContent = "Link copied — ready to share.";
+      }
+    } catch (error) {
+      if (error?.name !== "AbortError" && shareFeedback) {
+        shareFeedback.textContent = "Use your browser’s Share menu to send this page.";
+      }
+    }
+  });
+});
+
+if ("serviceWorker" in window.navigator) {
+  window.addEventListener("load", () => {
+    window.navigator.serviceWorker.register("/sw.js").catch(() => {});
+  });
+}

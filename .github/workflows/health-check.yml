@@ -1,0 +1,23 @@
+name: Public site health check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "45 8 * * *"
+      timezone: America/New_York
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Check the public site and forms
+        run: node scripts/health-check.mjs

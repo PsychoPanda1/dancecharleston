@@ -37,6 +37,8 @@ const STATIC_PATHS = [
   "404.html",
   "styles.css",
   "script.js",
+  "sw.js",
+  "offline.html",
   "site.webmanifest",
   "robots.txt",
   "CNAME",
@@ -416,7 +418,7 @@ function renderFooter() {
       <p>&copy; <span data-year></span> Dance Charleston</p>
       <a href="mailto:info@dancecharleston.com">info@dancecharleston.com</a>
     </footer>
-    <script src="/script.js?v=20260811-mobile-calendar"></script>`;
+    <script src="/script.js?v=20260811-share-offline"></script>`;
 }
 
 export function renderEventPage(event) {

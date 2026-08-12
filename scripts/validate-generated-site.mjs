@@ -14,6 +14,8 @@ for (const requiredPath of [
   "tango.html",
   "styles.css",
   "script.js",
+  "sw.js",
+  "offline.html",
   "robots.txt",
   "404.html",
   "site.webmanifest",
@@ -36,6 +38,8 @@ assert.equal(cname, "dancecharleston.com");
 const home = await readFile(path.join(outputDir, "index.html"), "utf8");
 const tango = await readFile(path.join(outputDir, "tango.html"), "utf8");
 const notFound = await readFile(path.join(outputDir, "404.html"), "utf8");
+const offline = await readFile(path.join(outputDir, "offline.html"), "utf8");
+const serviceWorker = await readFile(path.join(outputDir, "sw.js"), "utf8");
 const eventIndex = await readFile(path.join(outputDir, "events", "index.html"), "utf8");
 assert.ok(home.includes("info%40dancecharleston.com"), "main calendar embed changed unexpectedly");
 assert.ok(tango.includes("c_4c505db2b59a8993633fcaba1fb116ad84b21e38d154a69b62c90276b96467bf"));
@@ -50,6 +54,8 @@ assert.ok(tango.includes("social-icon-link--whatsapp"), "CATS WhatsApp icon link
 assert.ok(tango.includes("social-icon-link--facebook"), "CATS Facebook icon link missing");
 assert.ok(home.includes("social-icon-link--install"), "home page install icon missing");
 assert.ok(tango.includes("social-icon-link--install"), "Tango page install icon missing");
+assert.ok(home.includes("social-icon-link--share"), "home page share icon missing");
+assert.ok(tango.includes("social-icon-link--share"), "Tango page share icon missing");
 assert.ok(home.includes("data-install-dialog"), "home page install instructions missing");
 assert.ok(tango.includes("data-install-dialog"), "Tango page install instructions missing");
 assert.ok(tango.includes("/assets/cats-tango-social.png"), "Tango-specific social preview missing");
@@ -57,6 +63,8 @@ assert.ok(home.includes('rel="manifest" href="/site.webmanifest"'), "home page m
 assert.ok(tango.includes('rel="manifest" href="/site.webmanifest"'), "Tango page manifest link missing");
 assert.ok(notFound.includes('href="/"'), "404 page must link back to all events");
 assert.ok(notFound.includes('href="/tango.html"'), "404 page must link to Tango events");
+assert.ok(offline.includes("Reconnect to load the latest Charleston dance events"), "offline guidance missing");
+assert.ok(serviceWorker.includes('caches.match("/offline.html")'), "service worker offline fallback missing");
 assert.ok(
   tango.includes("https://chat.whatsapp.com/IjOchhZwt21GPp6twkI9gK?s=cl&amp;p=a&amp;ilr=4"),
   "CATS WhatsApp group link changed unexpectedly",
