@@ -81,6 +81,14 @@
               target="_blank"
               rel="noopener noreferrer"
             >Submit a Dance Event <span aria-hidden="true">&nearr;</span></a>
+            <span class="social-links install-links" aria-label="Phone shortcut">
+              <button class="social-icon-link social-icon-link--install" type="button" data-install-button aria-label="Add Dance Charleston to your phone" title="Add Dance Charleston to your phone" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect x="6.5" y="3" width="9.5" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M9.5 6h3.5M9.2 17.2h4.1M18.5 7.5v5M16 10h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </span>
           </div>
         </div>
       </section>
@@ -132,11 +140,22 @@
       </section>
     </main>
 
+    <dialog class="install-dialog" data-install-dialog aria-labelledby="install-dialog-title">
+      <form method="dialog"><button class="dialog-close" type="submit" aria-label="Close instructions">&times;</button></form>
+      <div class="install-dialog-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><rect x="6.5" y="3" width="9.5" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9.5 6h3.5M9.2 17.2h4.1M18.5 7.5v5M16 10h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <p class="eyebrow">Keep the calendar handy</p>
+      <h2 id="install-dialog-title">Add Dance Charleston to your phone</h2>
+      <ol data-install-instructions><li>Tap the <strong>Share</strong> button in Safari.</li><li>Choose <strong>Add to Home Screen</strong>.</li><li>Turn on <strong>Open as Web App</strong>, then tap <strong>Add</strong>.</li></ol>
+      <form method="dialog"><button class="calendar-link dialog-done" type="submit">Got it</button></form>
+    </dialog>
+
     <footer>
       <p>&copy; <span data-year></span> Dance Charleston</p>
       <a href="mailto:info@dancecharleston.com">info@dancecharleston.com</a>
     </footer>
 
-    <script src="script.js?v=20260811-mobile-calendar"></script>
+    <script src="script.js?v=20260811-phone-shortcut"></script>
   </body>
 </html>
