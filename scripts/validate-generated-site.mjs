@@ -12,6 +12,10 @@ async function mustExist(relativePath) {
 for (const requiredPath of [
   "index.html",
   "tango.html",
+  "Swing/index.html",
+  "Salsa-Bachata/index.html",
+  "Ballroom/index.html",
+  "Line-Dancing/index.html",
   "styles.css",
   "script.js",
   "sw.js",
@@ -41,6 +45,19 @@ const notFound = await readFile(path.join(outputDir, "404.html"), "utf8");
 const offline = await readFile(path.join(outputDir, "offline.html"), "utf8");
 const serviceWorker = await readFile(path.join(outputDir, "sw.js"), "utf8");
 const eventIndex = await readFile(path.join(outputDir, "events", "index.html"), "utf8");
+const stylePageDefinitions = [
+  ["Swing", "Swing/index.html", `${SITE_URL}/Swing/`],
+  ["Salsa & Bachata", "Salsa-Bachata/index.html", `${SITE_URL}/Salsa-Bachata/`],
+  ["Ballroom", "Ballroom/index.html", `${SITE_URL}/Ballroom/`],
+  ["Line Dancing", "Line-Dancing/index.html", `${SITE_URL}/Line-Dancing/`],
+];
+const stylePages = await Promise.all(
+  stylePageDefinitions.map(async ([name, relativePath, canonical]) => [
+    name,
+    await readFile(path.join(outputDir, relativePath), "utf8"),
+    canonical,
+  ]),
+);
 assert.ok(home.includes("info%40dancecharleston.com"), "main calendar embed changed unexpectedly");
 assert.ok(tango.includes("c_4c505db2b59a8993633fcaba1fb116ad84b21e38d154a69b62c90276b96467bf"));
 assert.ok(
@@ -73,11 +90,20 @@ assert.ok(home.includes('href="/events/"'), "home page must link to generated ev
 assert.ok(tango.includes('href="/events/"'), "Tango page must link to generated event pages");
 assert.ok(home.includes("Browse upcoming event details."), "home page event-details link text changed unexpectedly");
 assert.ok(tango.includes("Browse upcoming event details."), "Tango page event-details link text changed unexpectedly");
+assert.ok(home.includes("Explore by dance style"), "home page dance-style directory missing");
+
+for (const [pageName, html, canonical] of stylePages) {
+  assert.ok(html.includes("Coming soon"), `${pageName} page must be marked coming soon`);
+  assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `${pageName} canonical mismatch`);
+  assert.ok(html.includes('href="/#calendar"'), `${pageName} page must link to the full calendar`);
+  assert.ok(html.includes('href="mailto:info@dancecharleston.com'), `${pageName} page must include event submission`);
+}
 
 for (const [pageName, html] of [
   ["home", home],
   ["Tango", tango],
   ["event index", eventIndex],
+  ...stylePages.map(([pageName, html]) => [pageName, html]),
 ]) {
   const menu = html.match(/<div class="calendar-menu-list">(.*?)<\/div>/s)?.[1];
   assert.ok(menu, `${pageName} calendar menu missing`);
@@ -92,6 +118,9 @@ assert.ok(manifest.generatedAt && !Number.isNaN(Date.parse(manifest.generatedAt)
 
 const sitemap = await readFile(path.join(outputDir, "sitemap.xml"), "utf8");
 assert.ok(sitemap.includes(`<loc>${SITE_URL}/events/</loc>`));
+for (const [pageName, , canonical] of stylePages) {
+  assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `${pageName} missing from sitemap`);
+}
 
 for (const event of manifest.events) {
   const relativePath = path.join("events", event.slug, "index.html");

@@ -34,6 +34,10 @@ export const CALENDARS = [
 const STATIC_PATHS = [
   "index.html",
   "tango.html",
+  "Swing",
+  "Salsa-Bachata",
+  "Ballroom",
+  "Line-Dancing",
   "404.html",
   "styles.css",
   "script.js",
@@ -379,6 +383,10 @@ function renderHeader() {
               <div class="calendar-menu-list">
                 <a href="/">All events</a>
                 <a href="/tango.html">Tango events</a>
+                <a href="/Swing/">Swing</a>
+                <a href="/Salsa-Bachata/">Salsa &amp; Bachata</a>
+                <a href="/Ballroom/">Ballroom</a>
+                <a href="/Line-Dancing/">Line Dancing</a>
               </div>
             </details>
           </nav>
@@ -568,7 +576,15 @@ export function renderEventIndex(events) {
 }
 
 export function renderSitemap(events, buildDate) {
-  const staticUrls = ["/", "/tango.html", "/events/"];
+  const staticUrls = [
+    "/",
+    "/tango.html",
+    "/Swing/",
+    "/Salsa-Bachata/",
+    "/Ballroom/",
+    "/Line-Dancing/",
+    "/events/",
+  ];
   const urls = [
     ...staticUrls.map((pathname) => ({ url: `${SITE_URL}${pathname}`, priority: pathname === "/" ? "1.0" : "0.8" })),
     ...events.map((event) => ({ url: `${SITE_URL}/events/${event.slug}/`, priority: "0.7" })),

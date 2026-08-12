@@ -36,7 +36,14 @@ const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext();
 
 try {
-  for (const pathname of ["/", "/tango.html"]) {
+  for (const pathname of [
+    "/",
+    "/tango.html",
+    "/Swing/",
+    "/Salsa-Bachata/",
+    "/Ballroom/",
+    "/Line-Dancing/",
+  ]) {
     const page = await context.newPage();
     await page.goto(`http://127.0.0.1:${port}${pathname}`, { waitUntil: "domcontentloaded" });
     // Google Calendar is third-party UI we cannot change; audit the site-owned page shell.
