@@ -34,8 +34,10 @@ export const CALENDARS = [
 const STATIC_PATHS = [
   "index.html",
   "tango.html",
+  "404.html",
   "styles.css",
   "script.js",
+  "site.webmanifest",
   "robots.txt",
   "CNAME",
   "assets",
