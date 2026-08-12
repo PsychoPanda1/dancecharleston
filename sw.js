@@ -1,10 +1,10 @@
-const CACHE_NAME = "dance-charleston-v1";
+const CACHE_NAME = "dance-charleston-v2";
 const CORE_ASSETS = [
   "/",
   "/index.html",
   "/tango.html",
   "/offline.html",
-  "/styles.css?v=20260811-visual-refresh",
+  "/styles.css?v=20260811-share-contrast",
   "/script.js?v=20260811-share-offline",
   "/site.webmanifest",
   "/assets/dancecharleston-icon.jpg",

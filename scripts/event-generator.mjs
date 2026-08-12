@@ -409,7 +409,7 @@ function renderHead({ title, description, canonical, type = "website" }) {
     <meta name="twitter:title" content="${safeTitle}">
     <meta name="twitter:description" content="${safeDescription}">
     <meta name="twitter:image" content="${SITE_URL}/assets/dancecharleston-social.jpg">
-    <link rel="stylesheet" href="/styles.css?v=20260811-visual-refresh">
+    <link rel="stylesheet" href="/styles.css?v=20260811-share-contrast">
   </head>`;
 }
 

@@ -422,8 +422,14 @@ button.social-icon-link {
 }
 
 .social-icon-link--share {
-  background: var(--accent);
-  color: var(--cream);
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 8px 22px rgb(32 45 67 / 22%);
+}
+
+.social-icon-link--share svg {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .action-feedback {
