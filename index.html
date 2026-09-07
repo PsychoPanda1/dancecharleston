@@ -34,7 +34,7 @@
     >
     <meta name="twitter:image" content="https://dancecharleston.com/assets/dancecharleston-social.jpg">
     <meta name="twitter:image:alt" content="DanceCharleston logo on a navy background">
-    <link rel="stylesheet" href="styles.css?v=20260906-calendar-first">
+    <link rel="stylesheet" href="styles.css?v=20260906-welcome-first">
   </head>
   <body>
     <header class="site-header">
@@ -69,12 +69,36 @@
       </div>
     </header>
 
-    <main class="calendar-first">
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">Charleston's community dance calendar</p>
+          <h1 id="page-title">Let&rsquo;s dance, Charleston.</h1>
+          <p>
+            Explore upcoming social dances, lessons, workshops, and community events
+            across the Lowcountry.
+          </p>
+          <div class="intro-actions">
+            <a class="calendar-link" href="#calendar">View the calendar</a>
+            <a class="submit-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdtve1qHMu8uiXk-7clxj9_CTjhGLVZBG0jekx14N9eMEXDKA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Submit a Dance Event <span aria-hidden="true">&nearr;</span></a>
+            <span class="social-links install-links" aria-label="Share and phone shortcut">
+              <button class="social-icon-link social-icon-link--share" type="button" data-share-button aria-label="Share Dance Charleston" title="Share Dance Charleston">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.5" fill="currentColor"/><circle cx="6" cy="12" r="2.5" fill="currentColor"/><circle cx="18" cy="19" r="2.5" fill="currentColor"/><path d="m8.2 10.7 7.5-4.4M8.2 13.3l7.5 4.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </button>
+              <button class="social-icon-link social-icon-link--install" type="button" data-install-button aria-label="Add Dance Charleston to your phone" title="Add Dance Charleston to your phone" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6.5" y="3" width="9.5" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9.5 6h3.5M9.2 17.2h4.1M18.5 7.5v5M16 10h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+            </span>
+            <span class="action-feedback" data-share-feedback role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
       <section id="calendar" class="calendar-section" aria-labelledby="calendar-title">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Upcoming events</p>
-            <h1 id="calendar-title">Dance calendar</h1>
+            <h2 id="calendar-title">Dance calendar</h2>
           </div>
           <a
             class="google-link"
@@ -115,38 +139,6 @@
           </p>
         </aside>
       </section>
-      <section class="intro" aria-labelledby="intro-title">
-        <div class="intro-copy">
-          <p class="eyebrow">Charleston's community dance calendar</p>
-          <h2 id="intro-title">Let&rsquo;s dance, Charleston.</h2>
-          <p>
-            Explore upcoming social dances, lessons, workshops, and community events
-            across the Lowcountry.
-          </p>
-          <div class="intro-actions">
-            <a class="calendar-link" href="#calendar">View the calendar</a>
-            <a
-              class="submit-link"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdtve1qHMu8uiXk-7clxj9_CTjhGLVZBG0jekx14N9eMEXDKA/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Submit a Dance Event <span aria-hidden="true">&nearr;</span></a>
-            <span class="social-links install-links" aria-label="Share and phone shortcut">
-              <button class="social-icon-link social-icon-link--share" type="button" data-share-button aria-label="Share Dance Charleston" title="Share Dance Charleston">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.5" fill="currentColor"/><circle cx="6" cy="12" r="2.5" fill="currentColor"/><circle cx="18" cy="19" r="2.5" fill="currentColor"/><path d="m8.2 10.7 7.5-4.4M8.2 13.3l7.5 4.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-              </button>
-              <button class="social-icon-link social-icon-link--install" type="button" data-install-button aria-label="Add Dance Charleston to your phone" title="Add Dance Charleston to your phone" hidden>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <rect x="6.5" y="3" width="9.5" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
-                  <path d="M9.5 6h3.5M9.2 17.2h4.1M18.5 7.5v5M16 10h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </button>
-            </span>
-            <span class="action-feedback" data-share-feedback role="status" aria-live="polite"></span>
-          </div>
-        </div>
-      </section>
-
       <section class="style-directory" aria-labelledby="style-directory-title">
         <div class="style-directory-heading">
           <p class="eyebrow">Explore by dance style</p>

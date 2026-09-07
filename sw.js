@@ -4,7 +4,7 @@ const CORE_ASSETS = [
   "/index.html",
   "/tango.html",
   "/offline.html",
-  "/styles.css?v=20260906-calendar-first",
+  "/styles.css?v=20260906-welcome-first",
   "/script.js?v=20260811-share-offline",
   "/site.webmanifest",
   "/assets/dancecharleston-icon.jpg",

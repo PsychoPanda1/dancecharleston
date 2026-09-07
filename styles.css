@@ -289,10 +289,6 @@ footer a:focus-visible {
   outline-offset: 4px;
 }
 
-.calendar-first > .calendar-section {
-  padding-block: 1rem 0;
-}
-
 .calendar-section {
   padding-bottom: clamp(4rem, 8vw, 7rem);
   scroll-margin-top: 1rem;
