@@ -289,6 +289,10 @@ footer a:focus-visible {
   outline-offset: 4px;
 }
 
+.calendar-first > .calendar-section {
+  padding-block: 1rem 0;
+}
+
 .calendar-section {
   padding-bottom: clamp(4rem, 8vw, 7rem);
   scroll-margin-top: 1rem;
@@ -358,7 +362,9 @@ footer a:focus-visible {
   color: var(--gold);
 }
 
+.calendar-section > .section-heading h1,
 .calendar-section > .section-heading h2 {
+  max-width: none;
   color: var(--cream);
   font-size: clamp(1.8rem, 4vw, 2.75rem);
 }
