@@ -38,6 +38,7 @@ const STATIC_PATHS = [
   "Salsa-Bachata",
   "Ballroom",
   "Line-Dancing",
+  "offerings",
   "404.html",
   "styles.css",
   "script.js",
@@ -377,7 +378,7 @@ function renderHeader() {
         </a>
         <div class="header-actions">
           <p class="tagline">Find your next dance in Charleston, South Carolina.</p>
-          <nav class="calendar-nav" aria-label="Event calendars">
+          <nav class="calendar-nav" aria-label="Site navigation">
             <details class="calendar-menu">
               <summary>Calendars</summary>
               <div class="calendar-menu-list">
@@ -387,6 +388,7 @@ function renderHeader() {
                 <a href="/Salsa-Bachata/">Salsa &amp; Bachata</a>
                 <a href="/Ballroom/">Ballroom</a>
                 <a href="/Line-Dancing/">Line Dancing</a>
+                <a href="/offerings/">Services &amp; merch</a>
               </div>
             </details>
           </nav>
@@ -583,6 +585,7 @@ export function renderSitemap(events, buildDate) {
     "/Salsa-Bachata/",
     "/Ballroom/",
     "/Line-Dancing/",
+    "/offerings/",
     "/events/",
   ];
   const urls = [

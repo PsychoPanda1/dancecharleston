@@ -16,6 +16,8 @@ for (const requiredPath of [
   "Salsa-Bachata/index.html",
   "Ballroom/index.html",
   "Line-Dancing/index.html",
+  "offerings/index.html",
+  "offerings/offerings.css",
   "styles.css",
   "script.js",
   "sw.js",

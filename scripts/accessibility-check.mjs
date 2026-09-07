@@ -43,6 +43,7 @@ try {
     "/Salsa-Bachata/",
     "/Ballroom/",
     "/Line-Dancing/",
+    "/offerings/",
   ]) {
     const page = await context.newPage();
     await page.goto(`http://127.0.0.1:${port}${pathname}`, { waitUntil: "domcontentloaded" });
