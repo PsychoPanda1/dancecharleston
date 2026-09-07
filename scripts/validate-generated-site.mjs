@@ -95,7 +95,9 @@ assert.ok(tango.includes("Browse upcoming event details."), "Tango page event-de
 assert.ok(home.includes("Explore by dance style"), "home page dance-style directory missing");
 
 for (const [pageName, html, canonical] of stylePages) {
-  assert.ok(html.includes("Coming soon"), `${pageName} page must be marked coming soon`);
+  assert.ok(!/coming soon|dedicated guide.*on the way/i.test(html), `${pageName} must show live listings`);
+  assert.ok(html.includes('id="style-events"'), `${pageName} event listings missing`);
+  assert.ok(html.includes('data-event-count="'), `${pageName} generated event count missing`);
   assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `${pageName} canonical mismatch`);
   assert.ok(html.includes('href="/#calendar"'), `${pageName} page must link to the full calendar`);
   assert.ok(html.includes('href="mailto:info@dancecharleston.com'), `${pageName} page must include event submission`);

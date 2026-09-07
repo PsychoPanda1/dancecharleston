@@ -1,3 +1,4 @@
+import { renderStylePages } from "./dance-styles.mjs";
 import { createHash } from "node:crypto";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -660,6 +661,7 @@ export async function generateSite({ rootDir, outputDir, now = new Date(), fetch
   const eventsDir = path.join(outputDir, "events");
   await mkdir(eventsDir, { recursive: true });
   await writeFile(path.join(eventsDir, "index.html"), renderEventIndex(events), "utf8");
+  await renderStylePages({ rootDir, outputDir: path.dirname(eventsDir), events, renderCard: renderEventCard });
 
   for (const event of events) {
     const eventDir = path.join(eventsDir, event.slug);

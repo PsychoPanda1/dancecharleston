@@ -339,8 +339,7 @@ footer a:focus-visible {
   font-size: 1.6rem;
 }
 
-.style-card small,
-.coming-soon-badge {
+.style-card small {
   width: fit-content;
   border-radius: 999px;
   padding: 0.35rem 0.65rem;
@@ -350,33 +349,6 @@ footer a:focus-visible {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.coming-soon-main {
-  display: grid;
-  min-height: calc(100vh - 12rem);
-  place-items: center;
-  padding-block: 3rem 5rem;
-}
-
-.coming-soon-card {
-  width: min(100%, 58rem);
-  border: 1px solid var(--line);
-  border-radius: 1.5rem;
-  padding: clamp(2rem, 7vw, 5rem);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.coming-soon-card h1 {
-  margin-block: 1.15rem;
-}
-
-.coming-soon-card > p:not(.eyebrow) {
-  max-width: 42rem;
-  margin: 0 0 1.75rem;
-  color: var(--muted);
-  font-size: 1.1rem;
 }
 
 .calendar-section > .section-heading {
