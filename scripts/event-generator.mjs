@@ -1,3 +1,4 @@
+import { buildInvites } from "./invite-pages.mjs";
 import { renderStylePages } from "./dance-styles.mjs";
 import { createHash } from "node:crypto";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -49,6 +50,7 @@ const STATIC_PATHS = [
   "robots.txt",
   "CNAME",
   "assets",
+  "go",
 ];
 
 export function escapeHtml(value = "") {
@@ -658,6 +660,7 @@ export async function generateSite({ rootDir, outputDir, now = new Date(), fetch
     throw new Error("The combined calendars produced no publishable events");
   }
 
+  await buildInvites(rootDir, outputDir, events, now);
   const eventsDir = path.join(outputDir, "events");
   await mkdir(eventsDir, { recursive: true });
   await writeFile(path.join(eventsDir, "index.html"), renderEventIndex(events), "utf8");

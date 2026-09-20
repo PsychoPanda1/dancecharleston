@@ -44,6 +44,8 @@ try {
     "/Ballroom/",
     "/Line-Dancing/",
     "/offerings/",
+    "/go/",
+    "/go/friday-sep-25-2026/",
   ]) {
     const page = await context.newPage();
     await page.goto(`http://127.0.0.1:${port}${pathname}`, { waitUntil: "domcontentloaded" });

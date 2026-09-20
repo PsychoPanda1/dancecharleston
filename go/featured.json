@@ -1,0 +1,22 @@
+{
+  "featured": "friday-sep-25-2026",
+  "wallet": { "apple": null, "google": null },
+  "invites": [{
+    "id": "friday-sep-25-2026",
+    "uid": "c7ecs8idq2vcea6phcarnh1j3c@google.com",
+    "headline": "Come swing dance!",
+    "band": "She Goes He Goes",
+    "image": "/go/band.jpg",
+    "price": "$15 at the door",
+    "reassurance": "No partner required",
+    "lesson": "Lessons from 7 PM",
+    "dancing": "Open dancing 8–10 PM",
+    "initial": {
+      "title": "Holy City Swing: Live Band Dance — She Goes He Goes",
+      "start": "2026-09-25T19:00:00-04:00",
+      "end": "2026-09-25T22:00:00-04:00",
+      "location": "Radiant Church, 4870 Piedmont Ave, North Charleston, SC 29406",
+      "slug": "2026-09-25-holy-city-swing-live-band-dance-she-goes-he-goes-852ed9ea"
+    }
+  }]
+}

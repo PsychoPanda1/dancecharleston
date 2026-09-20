@@ -28,6 +28,11 @@ for (const requiredPath of [
   "CNAME",
   "events/index.html",
   "events/manifest.json",
+  "go/index.html",
+  "go/qr.svg",
+  "go/invite.js",
+  "go/invite.css",
+  "go/friday-sep-25-2026/index.html",
   "sitemap.xml",
   "assets/dancecharleston-social.jpg",
 ]) {
