@@ -15,11 +15,11 @@
     "test:lighthouse": "lhci autorun"
   },
   "dependencies": {
-    "node-ical": "0.25.1"
+    "node-ical": "0.27.2"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.12.1",
+    "@axe-core/playwright": "4.13.0",
     "@lhci/cli": "0.15.1",
-    "playwright": "1.62.1"
+    "playwright": "1.63.0"
   }
 }
